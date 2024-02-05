@@ -1,5 +1,3 @@
-"use client"
-
 import { db } from "@/app/_lib/prisma"
 import { PrismaAdapter } from "@auth/prisma-adapter"
 import NextAuth from "next-auth"
