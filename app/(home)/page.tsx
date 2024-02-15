@@ -27,10 +27,10 @@ const barbershop = await db.barbershop.findMany({})
         <Search />
       </div>
 
-      <div className="px-5 mt-6">
+      {/* <div className="px-5 mt-6">
         <p className="text-xs text-gray-400 font-bold mb-3">AGENDAMENTOS</p>
         <BookingItem />
-      </div>
+      </div> */}
 
       <div className="mt-6" >
         <p className="px-5 text-xs text-gray-400 font-bold mb-3">RECOMENDADOS</p>
