@@ -11,6 +11,7 @@ import Image from "next/image";
 import { Button } from "./ui/button";
 import { cancelBooking } from "../_actions/cancel-booking";
 import { toast } from "sonner";
+import { AlertDialog, AlertDialogTrigger, AlertDialogContent, AlertDialogTitle, AlertDialogDescription, AlertDialogCancel, AlertDialogAction ,AlertDialogHeader, AlertDialogFooter } from "./ui/alert-dialog";
 
 interface BookingItemProps{
     booking: Prisma.BookingGetPayload<{
@@ -139,10 +140,28 @@ const BookingItem = ({booking}: BookingItemProps) => {
                                 VOLTAR
                             </Button>
                         </SheetClose>
-                        <Button onClick={handleCancelClick} disabled={!isBookingConfirmed} className="w-full" variant={"destructive"}>
-                            CANCELAR
-                        </Button>
+                        
+                        <AlertDialog>
+                            <AlertDialogTrigger asChild>
+                                <Button disabled={!isBookingConfirmed} className="w-full" variant={"destructive"}>
+                                    CANCELAR
+                                </Button>
+                        </AlertDialogTrigger>
+                            <AlertDialogContent className="w-[90%]">
+                                <AlertDialogHeader>
+                                <AlertDialogTitle>Cancelar reserva?</AlertDialogTitle>
+                                <AlertDialogDescription>
+                                    Uma vez cancelada, não será possível reverter essa ação!
+                                </AlertDialogDescription>
+                                </AlertDialogHeader>
+                                <AlertDialogFooter className="flex-row gap-3">
+                                <AlertDialogCancel className="w-full mt-0">Voltar</AlertDialogCancel>
+                                <AlertDialogAction onClick={handleCancelClick} className="w-full">Confirmar</AlertDialogAction>
+                                </AlertDialogFooter>
+                            </AlertDialogContent>
+                        </AlertDialog>
                    </SheetFooter>
+                   
                 </div>
             
         </SheetContent>
