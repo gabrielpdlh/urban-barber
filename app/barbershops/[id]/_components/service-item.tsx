@@ -193,7 +193,7 @@ const ServiceItem = ({service, barbershop, isAuthenticated}:ServiceItemProps) =>
                                             }
                                             }}
                                         />
-                                    </div>
+                                    </div> 
 
                                     {date &&(
                                         <div className="flex gap-3 overflow-x-auto py-6 px-5 border-t border-solid border-secondary  [&::-webkit-scrollbar]:hidden">
