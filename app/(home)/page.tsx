@@ -59,10 +59,14 @@ const bookings = session?.user ? await db.booking.findMany({
       </div>
 
        <div className="mt-6">
-        <h2 className="pl-5 text-xs text-gray-400 font-bold mb-3">AGENDAMENTOS</h2>
+       {confirmedBookings.length > 0 && (
+        <>
+         <h2 className="pl-5 text-xs text-gray-400 font-bold mb-3">AGENDAMENTOS</h2>
        <div className="px-5 mt-6 flex gap-3 overflow-x-auto [&::-webkit-scrollbar]:hidden">
         {bookings.map((booking: { id: Key | null | undefined; }) => <BookingItem key={booking.id} booking={booking} />) }
        </div>
+       </>
+       )}
         
       </div> 
 
