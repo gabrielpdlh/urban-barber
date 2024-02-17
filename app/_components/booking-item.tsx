@@ -90,7 +90,7 @@ const BookingItem = ({booking}: BookingItemProps) => {
                                 </Avatar>  
                                 <div className="">
                                     <h2 className="font-bold ">{booking.barbershop.name}</h2>
-                                    <h3 className="text-xs overflow-hidden text-nowrap text-ellipsis">{booking.barbershop.address}</h3>
+                                    <h3 className="text-xs truncate ">{booking.barbershop.address}</h3>
                                 </div>
                             </CardContent>
                         </Card>
