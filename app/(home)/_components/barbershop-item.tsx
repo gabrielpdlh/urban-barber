@@ -39,8 +39,8 @@ const BarbershopItem = ({barbershop}: BarbershopItemProps) => {
                 </div>
 
                 <div className="px-3 pb-3">
-                    <h2 className="font-bold mt-2 overflow-hidden text-ellipsis text-nowrap">{barbershop.name}</h2>
-                    <p className="text-sm text-gray-400 overflow-hidden text-ellipsis text-nowrap">{barbershop.address}</p>
+                    <h2 className="font-bold mt-2 truncate">{barbershop.name}</h2>
+                    <p className="text-sm text-gray-400 truncate">{barbershop.address}</p>
                     <Button variant="secondary" className="w-full mt-3" onClick={handleBookingClick}>Reservar</Button>
                 </div>
             </CardContent>
